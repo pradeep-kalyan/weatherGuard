@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
 // Get all users
 router.post("/create/", async (req, res) => {
   const { name, email, lat, lon } = req.body;
-
+  log("Received data:", req.body);
   try {
     const user = await User.create({ name, email, lat, lon });
 
