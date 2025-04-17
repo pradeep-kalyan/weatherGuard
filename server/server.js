@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors()); // Allow all origins by default
 connectDB();
 console.log("mongo connected successfully");
-cron.schedule("26 17 * * *", weatherTask);
+cron.schedule("28 17 * * *", weatherTask);
 //  // 1:30 AM UTC = 7:00 AM IST
 
 weatherTask();
