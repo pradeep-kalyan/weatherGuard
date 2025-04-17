@@ -10,7 +10,7 @@ const weatherTask = async () => {
   for (const user of users) {
     try {
       const { data } = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${user.lat}&lon=${user.lon}&appid=${process.env.WEATHER_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${user.lat}&lon=${user.lon}&appid=${process.env.WEATHERMAN}`
       );
 
       const weather = data.weather[0].description;
