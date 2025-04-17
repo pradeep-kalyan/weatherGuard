@@ -17,6 +17,7 @@ app.use(express.json());
 // Connect to MongoDB
 app.use(cors()); // Allow all origins by default
 connectDB();
+console.log("mongo connected successfully");
 cron.schedule("30 1 * * *", weatherTask); // 1:30 AM UTC = 7:00 AM IST
 
 app.use("/api/user/", userRoutes);
