@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 
 export const get_weather_data = async ({ lat, lon }) => {
-  const api_key = "ad76597c6ab9f7e5c5f8bc6a60ca5883";
+  const api_key = "";
   console.log(lat, lon);
 
   await axios
