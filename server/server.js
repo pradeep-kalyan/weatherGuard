@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import { connectToDatabase } from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import cron from "node-cron";
-import weatherTask from "./utils.js/WeatherTask.js";
+import weatherTask from "./utils/WeatherTask.js";
 import cors from "cors";
 
 // Load environment variables
@@ -17,12 +17,8 @@ app.use(express.json());
 // Connect to MongoDB
 app.use(cors()); // Allow all origins by default
 connectToDatabase();
-cron.schedule("0 7 * * *", weatherTask); // Runs at 7:00 AM every day
+cron.schedule("30 1 * * *", weatherTask); // 1:30 AM UTC = 7:00 AM IST
 
-// Define Routes
-// app.get("/", (req, res) => {
-//   res.send("Hello World!");
-// });
 app.use("/api/user/", userRoutes);
 
 // Start Server
