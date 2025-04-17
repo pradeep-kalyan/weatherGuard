@@ -4,7 +4,10 @@ import { User } from "../models/userModel.js";
 import { send_mail } from "../mailer.js";
 
 const router = express.Router();
-
+router.get("/", async (req, res) => {
+  res.json({ message: "Hello from user route" });
+});
+// Get all users
 router.post("/create/", async (req, res) => {
   const { name, email, lat, lon } = req.body;
 
