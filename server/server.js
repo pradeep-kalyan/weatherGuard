@@ -1,7 +1,7 @@
 // index.js (Entry Point)
 import express from "express";
 import dotenv from "dotenv";
-import { connectToDatabase } from "./config/db.js";
+import { connectDB } from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import cron from "node-cron";
 import weatherTask from "./utils/WeatherTask.js";
@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Connect to MongoDB
 app.use(cors()); // Allow all origins by default
-connectToDatabase();
+connectDB();
 cron.schedule("30 1 * * *", weatherTask); // 1:30 AM UTC = 7:00 AM IST
 
 app.use("/api/user/", userRoutes);

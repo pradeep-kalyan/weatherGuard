@@ -1,6 +1,6 @@
-import { axios } from "axios";
-import { User } from "../models/userModel";
-import { send_mail } from "../mailer";
+import { User } from "../models/userModel.js";
+import { send_mail } from "../mailer.js";
+import axios from "axios";
 
 const weatherTask = async () => {
   const users = await User.find();
