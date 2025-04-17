@@ -3,6 +3,8 @@ import { send_mail } from "../mailer.js";
 import axios from "axios";
 
 const weatherTask = async () => {
+  console.log("Weather task started");
+
   const users = await User.find();
 
   for (const user of users) {
