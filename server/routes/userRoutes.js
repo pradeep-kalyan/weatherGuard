@@ -3,11 +3,12 @@ import express from "express";
 import { User } from "../models/userModel.js";
 import { send_mail } from "../mailer.js";
 
-const router = express.Router();;
+const router = express.Router();
 // Get all users
+
+
 router.post("/create/", async (req, res) => {
   const { name, email, lat, lon } = req.body;
-  log("Received data:", req.body);
   try {
     const user = await User.create({ name, email, lat, lon });
     await send_mail(
