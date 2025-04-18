@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors()); // Allow all origins by default
 connectDB();
 console.log("mongo connected successfully");
-cron.schedule("00 10 * * *", weatherTask, {
+cron.schedule("40 11 * * *", weatherTask, {
   timezone: "Asia/Kolkata",
 });
 console.log("Cron job scheduled to run at 7:00 AM IST every day");
